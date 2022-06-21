@@ -31,9 +31,7 @@ public class UserController {
     public ResponseEntity<ApiResponse> deleteUser(@PathVariable long userId){
         UserDTO deletedUser = userService.removeUser(userId);
         ApiResponse response = new ApiResponse("User with "+ userId+" Deleted Successfully",true);
-        System.out.println(response);
         ResponseEntity<ApiResponse> finalResponse = new ResponseEntity<>(response,HttpStatus.NO_CONTENT);
-        System.out.println(finalResponse.toString());
         return finalResponse;
     }
 
